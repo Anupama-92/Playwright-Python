@@ -1,9 +1,12 @@
 import re
 
+from playwright.sync_api import Page
+
 
 class ProjectConfigurationPage:
-    def __init__(self, page):
+    def __init__(self, page: Page, base_url: str):
         self.page = page
+        self.base_url = base_url
         self.home_frame = self.page.frame_locator("#applicationId")
 
     def navigate_to_project_configuration(self):
@@ -11,7 +14,7 @@ class ProjectConfigurationPage:
         self.home_frame.locator("img.menuicon[src='assets/configuration.png']").hover()
         self.home_frame.get_by_text("Project Configuration").click()
 
-    def add_new_project(self, project_name: str, description: str, start_date: str,hours_per_day: str, alias_email: str,
+    def add_new_project(self, project_name: str, description: str, start_date: str, hours_per_day: str, alias_email: str,
                         tech_stack_to_select: str):
         self.page.pause()
         self.home_frame.get_by_role("button", name="Add Project").click()

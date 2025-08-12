@@ -1,6 +1,10 @@
+from playwright.sync_api import Page
+
+
 class ClientConfigurationPage:
-    def __init__(self, page):
+    def __init__(self, page: Page, base_url: str):
         self.page = page
+        self.base_url = base_url
         self.home_frame = self.page.frame_locator("#applicationId")
 
     def navigate_to_project_management(self):
