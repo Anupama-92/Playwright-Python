@@ -10,7 +10,6 @@ class ProjectConfigurationPage:
         self.home_frame = self.page.frame_locator("#applicationId")
 
     def navigate_to_project_configuration(self):
-        self.page.pause()
         self.home_frame.locator("img.menuicon[src='assets/configuration.png']").hover()
         self.home_frame.get_by_text("Project Configuration").click()
 
