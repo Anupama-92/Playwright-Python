@@ -1,12 +1,14 @@
-from tests.config.config import Config
+
+from playwright.sync_api import Page
 
 
 class MicrosoftLoginPage:
-    def __init__(self, page):
+    def __init__(self, page: Page, base_url: str):
         self.page = page
+        self.base_url = base_url
 
     def navigate_to_login(self):
-        self.page.goto(Config.LOGIN_URL)
+        self.page.goto(self.base_url)
 
     def enter_username(self, username: str):
         self.page.get_by_role("textbox", name="Enter your email, phone, or").click()
