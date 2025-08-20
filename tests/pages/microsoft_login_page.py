@@ -27,4 +27,4 @@ class MicrosoftLoginPage:
 
     def confirm_stay_signed_in(self):
         self.yes_button.click()
-        self.page.pause()
+

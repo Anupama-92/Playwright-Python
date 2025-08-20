@@ -1,0 +1,1 @@
+[{"values":["QA"],"name":"Environment"},{"values":["https://chorusqa.cogninelabs.com/"],"name":"Frontend.URL"},{"values":["Chrome"],"name":"Browser"},{"values":["Windows 10"],"name":"Platform"},{"values":["1.50.0"],"name":"Playwright.Version"}]
